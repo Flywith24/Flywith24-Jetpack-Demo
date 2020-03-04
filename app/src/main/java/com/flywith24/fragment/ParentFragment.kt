@@ -13,6 +13,7 @@ import com.flywith24.library.base.ext.addOnBackPressedCallback
  * @date   2020/3/4
  * time   10:02
  * description
+ * parentFragment 包含四个返回栈，各个返回栈中显示若干[ChildFragment]
  */
 class ParentFragment : BaseFragment<FragmentParentBinding>(R.layout.fragment_parent) {
     override fun initBinding(view: View): FragmentParentBinding = FragmentParentBinding.bind(view)
