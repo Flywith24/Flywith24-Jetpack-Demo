@@ -29,7 +29,7 @@ class ParentFragment : BaseFragment<FragmentParentBinding>(R.layout.fragment_par
         if (savedInstanceState == null) {
             for (containerId in containerIds) {
                 childFragmentManager.commit {
-                    val fragment = ChildFragment.newInstance(name(containerId), 1, containerId)
+                    val fragment = ChildFragment.newInstance(name(containerId), 1)
                     replace(containerId, fragment, fragment.stableTag)
                 }
             }

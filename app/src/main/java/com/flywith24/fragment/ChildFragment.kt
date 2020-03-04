@@ -24,24 +24,23 @@ class ChildFragment : BaseFragment<FragmentChildBinding>(R.layout.fragment_child
     private var name: String by args()
 
     var depth: Int by args()
-    var containerId: Int by args()
 
     override fun init(savedInstanceState: Bundle?) {
+
         binding.button.text = getString(R.string.fragmentHint, name, depth)
         binding.button.setOnClickListener {
             parentFragmentManager.commit {
-                replace(containerId, newInstance(name, depth + 1, containerId))
-                addToBackStack(containerId.toString())
+                replace(id, newInstance(name, depth + 1))
+                addToBackStack(id.toString())
             }
         }
     }
 
     companion object {
-        fun newInstance(name: String, depth: Int, containerId: Int): ChildFragment =
+        fun newInstance(name: String, depth: Int): ChildFragment =
             ChildFragment().apply {
                 this.name = name
                 this.depth = depth
-                this.containerId = containerId
             }
     }
 }
