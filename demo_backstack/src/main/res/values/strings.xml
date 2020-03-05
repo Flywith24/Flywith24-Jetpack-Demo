@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Flywith24-Fragment-Demo</string>
-    <string name="fragmentHint">name %1$s fragment %2$d</string>
+    <string name="fragmentHint">name\n%1$s\n\nnum\n%2$d</string>
 
 </resources>

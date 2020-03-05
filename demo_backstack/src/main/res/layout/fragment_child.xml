@@ -5,7 +5,8 @@
     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textSize="30sp"
-    tools:text="ssss">
+    android:layout_margin="20dp"
+    android:textSize="25sp"
+    tools:text="@string/fragmentHint">
 
 </com.google.android.material.button.MaterialButton>
