@@ -2,6 +2,7 @@ package com.flywith24.buildsrc.plugin
 
 import com.android.build.gradle.api.AndroidBasePlugin
 import com.flywith24.buildsrc.dependencies.AndroidX
+import com.flywith24.buildsrc.dependencies.Google
 import com.flywith24.buildsrc.dependencies.Kotlin
 import com.flywith24.buildsrc.dependencies.Testing.androidTestRules
 import com.flywith24.buildsrc.dependencies.Testing.androidTestRunner
@@ -37,6 +38,7 @@ internal fun Project.configureDependencies() = dependencies.apply {
     add(implementation, AndroidX.constraintlayout)
     add(implementation, AndroidX.cardview)
     add(implementation, Kotlin.stdlibJdk7)
+    add(implementation, Google.material)
 }
 
 internal fun Project.containsAndroidPlugin(): Boolean {
