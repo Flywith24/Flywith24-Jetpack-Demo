@@ -1,6 +1,7 @@
 package com.flywith24.singlefragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
 /**
@@ -11,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Log.i(TAG, "MainActivity onCreate")
         //解决旋转屏幕等场景 fragment 重叠的问题
         if (savedInstanceState == null) {
 
@@ -29,11 +30,40 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 // 最终都调用  addOp(new Op(opcmd, fragment)) →   mOps.add(op);
                 .add(R.id.container, BlankFragment.newInstance())
                 //4. 可选 mAddToBackStack = true;
-                .addToBackStack(null)
+//                .addToBackStack(null)
                 //5. BackStackRecord中实现具体逻辑，同类型的方法有
                 //commit commitAllowingStateLoss
                 //commitNow commitNowAllowingStateLoss
-                .commit()
+                .commitNow()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i(TAG, "MainActivity onStart")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i(TAG, "MainActivity onPause")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(TAG, "MainActivity onResume")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i(TAG, "MainActivity onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(TAG, "MainActivity onDestroy")
+    }
+
+    companion object {
+        const val TAG = "FragmentManager"
     }
 }
