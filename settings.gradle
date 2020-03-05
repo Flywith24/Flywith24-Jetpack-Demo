@@ -1,5 +1,5 @@
 rootProject.name='Flywith24-Fragment-Demo'
-include ':app'
+include ':demo_backstack'
+include ':demo_singlefragment'
 include ':buildSrc'
 include ':library_base'
-include ':demo_singlefragment'
