@@ -1,6 +1,7 @@
 package com.flywith24.fragment.stack.multiple
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.commit
 import androidx.fragment.app.commitNow
@@ -23,7 +24,7 @@ class MultipleStackParentFragment :
         for (id in DESTINATIONS) {
             childFragmentManager.commitNow {
                 val fragment =
-                    MultipleStackChildFragment.newInstance(name(R.id.inner_container), 1)
+                    MultipleStackChildFragment.newInstance(name(id), 1)
                 add(R.id.inner_container, fragment, fragment.stableTag)
             }
         }
@@ -32,6 +33,8 @@ class MultipleStackParentFragment :
                 childFragmentManager.commit {
 
                 }
+                Log.i("yyz1", "${name(checkId)}")
+
                 when (checkId) {
                     R.id.first -> {
                     }

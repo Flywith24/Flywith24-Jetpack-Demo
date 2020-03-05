@@ -24,7 +24,7 @@ class MultipleStackChildFragment :
     var depth: Int by args()
 
     override fun init(savedInstanceState: Bundle?) {
-
+        binding.text.text = getString(R.string.fragmentHint, name, depth)
     }
 
     companion object {
