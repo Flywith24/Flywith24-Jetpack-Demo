@@ -2,7 +2,6 @@ package com.flywith24.fragment.stack.independent
 
 import android.os.Bundle
 import android.view.View
-import androidx.annotation.IdRes
 import androidx.fragment.app.commit
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentParentBinding
@@ -48,7 +47,4 @@ class IndependentStackParentFragment :
         R.id.stack_3,
         R.id.stack_4
     )
-    private fun name(@IdRes containerId: Int) =
-        resources.getResourceEntryName(containerId).replace("_", " ")
-
 }

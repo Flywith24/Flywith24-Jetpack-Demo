@@ -2,6 +2,7 @@ package com.flywith24.library.base
 
 import android.os.Bundle
 import android.view.View
+import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
@@ -29,6 +30,9 @@ abstract class BaseFragment<T : ViewBinding>(@LayoutRes layoutId: Int) : Fragmen
     abstract fun initBinding(view: View): T
 
     abstract fun init(savedInstanceState: Bundle?)
+
+    fun name(@IdRes containerId: Int) =
+        resources.getResourceEntryName(containerId).replace("_", " ")
 
     override fun onDestroyView() {
         _binding = null

@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Flywith24-Fragment-Demo</string>
     <string name="fragmentHint">name\n%1$s\n\nnum\n%2$d</string>
+    <string name="first">first</string>
+    <string name="second">second</string>
+    <string name="third">third</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="independent">独立返回栈</string>
+    <string name="multiple">多返回栈</string>
 
 </resources>

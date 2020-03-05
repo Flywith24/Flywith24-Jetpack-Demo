@@ -5,6 +5,7 @@ import android.view.View
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentMultipleChildBinding
 import com.flywith24.library.base.BaseFragment
+import com.flywith24.library.base.ext.args
 
 /**
  * @author yyz (杨云召)
@@ -17,7 +18,20 @@ class MultipleStackChildFragment :
     override fun initBinding(view: View): FragmentMultipleChildBinding =
         FragmentMultipleChildBinding.bind(view)
 
+    val stableTag: String
+        get() = "${javaClass.simpleName}-$name-$depth"
+    private var name: String by args()
+    var depth: Int by args()
+
     override fun init(savedInstanceState: Bundle?) {
 
+    }
+
+    companion object {
+        fun newInstance(name: String, depth: Int): MultipleStackChildFragment =
+            MultipleStackChildFragment().apply {
+                this.name = name
+                this.depth = depth
+            }
     }
 }
