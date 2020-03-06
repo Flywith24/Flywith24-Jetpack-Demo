@@ -20,28 +20,42 @@ class MultipleStackParentFragment :
     override fun initBinding(view: View): FragmentMultipleParentBinding =
         FragmentMultipleParentBinding.bind(view)
 
+    lateinit var currentFragment: String
+
+    private val stackList = ArrayList<StackFragment>()
     override fun init(savedInstanceState: Bundle?) {
-        for (id in DESTINATIONS) {
+        childFragmentManager.registerFragmentLifecycleCallbacks(
+            StackFragment.StackLifecycleCallback(),
+            false
+        )
+        currentFragment = name(DESTINATIONS[0])
+        for (index in DESTINATIONS.indices) {
             childFragmentManager.commitNow {
                 val fragment =
-                    MultipleStackChildFragment.newInstance(name(id), 1)
+                    StackFragment.newInstance(index, name(DESTINATIONS[index]))
+                stackList.add(fragment)
                 add(R.id.inner_container, fragment, fragment.stableTag)
             }
         }
+        /*    for (id in DESTINATIONS) {
+                childFragmentManager.commitNow {
+                    val fragment =
+                        MultipleStackChildFragment.newInstance(name(id), 1)
+                    add(R.id.inner_container, fragment, fragment.stableTag)
+                }
+            }*/
         binding.tabs.addOnButtonCheckedListener { _, checkId, isChecked ->
             if (isChecked) {
+                currentFragment = name(checkId)
                 childFragmentManager.commit {
-
-                }
-                Log.i("yyz1", "${name(checkId)}")
-
-                when (checkId) {
-                    R.id.first -> {
-                    }
-                    R.id.second -> {
-                    }
-                    R.id.third -> {
-                    }
+                    transactions@ for (fragment in stackList)
+                        when {
+                            fragment.name == currentFragment && !fragment.isDetached -> continue@transactions
+                            fragment.name == currentFragment && fragment.isDetached -> attach(
+                                fragment
+                            )
+                            else -> if (!fragment.isDetached) detach(fragment)
+                        }
                 }
             }
         }
