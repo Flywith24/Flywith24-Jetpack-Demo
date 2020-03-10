@@ -10,18 +10,21 @@ import androidx.fragment.app.Fragment
 
 class BlankFragment : Fragment(R.layout.fragment_blank) {
     override fun onAttach(context: Context) {
-        super.onAttach(context)
         Log.i(TAG, "BlankFragment onAttach")
+        Log.i(TAG, "BlankFragment parentFragmentManager $parentFragmentManager")
+        Log.i(TAG, "BlankFragment childFragmentManager $childFragmentManager")
+
+        super.onAttach(context)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         Log.i(TAG, "BlankFragment onCreate")
+        super.onCreate(savedInstanceState)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         Log.i(TAG, "BlankFragment onActivityCreated")
+        super.onActivityCreated(savedInstanceState)
     }
 
     override fun onCreateView(
@@ -34,43 +37,43 @@ class BlankFragment : Fragment(R.layout.fragment_blank) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         Log.i(TAG, "BlankFragment onViewCreated")
+        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onStart() {
-        super.onStart()
         Log.i(TAG, "BlankFragment onStart")
+        super.onStart()
     }
 
     override fun onPause() {
-        super.onPause()
         Log.i(TAG, "BlankFragment onPause")
+        super.onPause()
     }
 
     override fun onResume() {
-        super.onResume()
         Log.i(TAG, "BlankFragment onResume")
+        super.onResume()
     }
 
     override fun onStop() {
-        super.onStop()
         Log.i(TAG, "BlankFragment onStop")
+        super.onStop()
     }
 
     override fun onDetach() {
-        super.onDetach()
         Log.i(TAG, "BlankFragment onDetach")
+        super.onDetach()
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
         Log.i(TAG, "BlankFragment onDestroyView")
+        super.onDestroyView()
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         Log.i(TAG, "BlankFragment onDestroy")
+        super.onDestroy()
     }
 
     companion object {
