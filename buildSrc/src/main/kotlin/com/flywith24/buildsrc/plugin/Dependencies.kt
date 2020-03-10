@@ -19,6 +19,7 @@ import org.gradle.api.Project
  */
 
 const val implementation = "implementation"
+const val debugImplementation = "debugImplementation"
 const val testImplementation = "testImplementation"
 const val androidTestImplementation = "androidTestImplementation"
 
@@ -35,6 +36,7 @@ internal fun Project.configureDependencies() = dependencies.apply {
     add(implementation, AndroidX.appcompat)
     add(implementation, AndroidX.coreKtx)
     add(implementation, AndroidX.Fragment.fragmentKtx)
+    add(debugImplementation, AndroidX.Fragment.fragmentTesting)
     add(implementation, AndroidX.constraintlayout)
     add(implementation, AndroidX.cardview)
     add(implementation, Kotlin.stdlibJdk7)

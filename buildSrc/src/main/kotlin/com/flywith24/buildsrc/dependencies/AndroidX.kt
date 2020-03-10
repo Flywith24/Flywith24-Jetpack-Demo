@@ -24,6 +24,7 @@ object AndroidX {
         private const val fragment_version = "1.2.2"
         const val fragment = "androidx.fragment:fragment:$fragment_version"
         const val fragmentKtx = "androidx.fragment:fragment-ktx:$fragment_version"
+        const val fragmentTesting = "androidx.fragment:fragment-testing:$fragment_version"
     }
 
     val lifecycle = Lifecycle
