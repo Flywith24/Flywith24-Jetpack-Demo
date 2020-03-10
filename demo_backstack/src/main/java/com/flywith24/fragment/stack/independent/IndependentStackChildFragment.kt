@@ -2,6 +2,7 @@ package com.flywith24.fragment.stack.independent
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.commit
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentChildBinding
@@ -28,19 +29,44 @@ class IndependentStackChildFragment : BaseFragment<FragmentChildBinding>(R.layou
 
     override fun init(savedInstanceState: Bundle?) {
 
-        binding.button.text = getString(R.string.fragmentHint, name, depth)
+        binding.button.text = getString(R.string.fragmentHint, getValue(), getCount(depth))
         binding.button.setOnClickListener {
-            parentFragmentManager.commit {
-                replace(
-                    id,
-                    newInstance(
-                        name,
-                        depth + 1
+            if (depth < 13) {
+                parentFragmentManager.commit {
+                    replace(
+                        id,
+                        newInstance(
+                            name,
+                            depth + 1
+                        )
                     )
-                )
-                addToBackStack(id.toString())
+                    addToBackStack(id.toString())
+                }
+            } else {
+                Toast.makeText(
+                        requireContext(),
+                        getString(R.string.done, getValue()),
+                        Toast.LENGTH_SHORT
+                    )
+                    .show()
             }
         }
+    }
+
+    private fun getCount(value: Int): String = when (value) {
+        11 -> "J"
+        12 -> "Q"
+        13 -> "K"
+        1 -> "A"
+        else -> value.toString()
+    }
+
+    private fun getValue(): String = when (id) {
+        R.id.stack_1 -> "♥"
+        R.id.stack_2 -> "♦"
+        R.id.stack_3 -> "♠"
+        R.id.stack_4 -> "♣"
+        else -> ""
     }
 
     companion object {
