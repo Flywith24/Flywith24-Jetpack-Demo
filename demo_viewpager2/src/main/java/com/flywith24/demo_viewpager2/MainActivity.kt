@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        //此处使用 Kotlin synthetics 引用 view
         pager.adapter = SimplePagerAdapter(this)
         TabLayoutMediator(tabLayout, pager) { tab, position ->
             tab.text = "OBJECT ${(position + 1)}"
