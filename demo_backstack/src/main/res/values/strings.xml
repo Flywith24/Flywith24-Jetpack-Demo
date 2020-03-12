@@ -6,8 +6,8 @@
     <string name="third">third</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="independent">独立返回栈</string>
-    <string name="multiple">多返回栈</string>
+    <string name="independent">single back stack</string>
+    <string name="multiple">multiple back stack</string>
     <string name="done">%1$s发完了</string>
     <string name="header">女装大佬在线发牌</string>
 
