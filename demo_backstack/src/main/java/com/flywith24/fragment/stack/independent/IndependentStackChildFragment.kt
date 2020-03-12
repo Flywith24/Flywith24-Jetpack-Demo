@@ -40,7 +40,7 @@ class IndependentStackChildFragment : BaseFragment<FragmentChildBinding>(R.layou
                             depth + 1
                         )
                     )
-                    addToBackStack(id.toString())
+                    addToBackStack(getValue())
                 }
             } else {
                 Toast.makeText(

@@ -23,6 +23,8 @@ class IndependentStackParentFragment :
         //返回键拦截
         addOnBackPressedCallback {
             isEnabled = childFragmentManager.backStackEntryCount != 0
+//            if (isEnabled) childFragmentManager.popBackStack("♥", 1)
+//            if (isEnabled) childFragmentManager.popBackStack("♥", 0)
             if (isEnabled) childFragmentManager.popBackStack()
             else requireActivity().onBackPressed()
         }
