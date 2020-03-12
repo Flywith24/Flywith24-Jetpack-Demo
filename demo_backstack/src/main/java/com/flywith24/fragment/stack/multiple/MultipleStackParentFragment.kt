@@ -20,13 +20,13 @@ class MultipleStackParentFragment :
 
     lateinit var currentFragment: String
 
-    private val stackList = ArrayList<StackFragment>()
+    private val stackList = ArrayList<NavHostFragment>()
     override fun init(savedInstanceState: Bundle?) {
 
         currentFragment = name(DESTINATIONS[0])
         DESTINATIONS.forEachIndexed { index, id ->
             childFragmentManager.commitNow {
-                val fragment = StackFragment.newInstance(index, name(id))
+                val fragment = NavHostFragment.newInstance(index, name(id))
                 stackList.add(fragment)
                 add(R.id.inner_container, fragment, fragment.stableTag)
             }

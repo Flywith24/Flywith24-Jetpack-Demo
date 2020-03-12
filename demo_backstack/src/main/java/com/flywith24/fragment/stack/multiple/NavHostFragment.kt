@@ -16,8 +16,9 @@ import com.flywith24.library.base.ext.args
  * @date   2020/3/6
  * time   13:38
  * description
+ * 多返回栈意味着多 fragmentManager，因此使用多个无ui fragment 作为多返回栈载体
  */
-class StackFragment : BaseFragment<FragmentStackBinding>(R.layout.fragment_stack) {
+class NavHostFragment : BaseFragment<FragmentStackBinding>(R.layout.fragment_stack) {
     override fun initBinding(view: View): FragmentStackBinding = FragmentStackBinding.bind(view)
 
     val stableTag: String
@@ -56,7 +57,7 @@ class StackFragment : BaseFragment<FragmentStackBinding>(R.layout.fragment_stack
 
     companion object {
         internal fun newInstance(index: Int, name: String) =
-            StackFragment().apply {
+            NavHostFragment().apply {
                 this.index = index
                 this.name = name
             }
