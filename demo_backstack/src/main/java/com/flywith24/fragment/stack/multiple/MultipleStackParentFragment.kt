@@ -50,6 +50,5 @@ class MultipleStackParentFragment :
 
     companion object {
         private val DESTINATIONS = intArrayOf(R.id.first, R.id.second, R.id.third)
-        const val TAG = "yyz11"
     }
 }
