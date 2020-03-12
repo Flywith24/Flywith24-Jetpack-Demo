@@ -21,8 +21,8 @@
 
 ## screenshot
 
-![](https://gitee.com/flywith24/Album/raw/master/img/20200312175843.gif)
+![](./screenshot/screenshot1.gif)
 
-![](https://gitee.com/flywith24/Album/raw/master/img/20200312180015.gif)
+![](./screenshot/screenshot2.gif)
 
-![](https://gitee.com/flywith24/Album/raw/master/img/20200312175950.gif)
+![](./screenshot/screenshot3.gif)
