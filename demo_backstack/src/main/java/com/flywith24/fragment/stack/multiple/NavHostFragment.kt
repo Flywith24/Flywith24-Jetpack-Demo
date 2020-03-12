@@ -62,6 +62,6 @@ class NavHostFragment : BaseFragment<FragmentStackBinding>(R.layout.fragment_sta
                 this.name = name
             }
 
-        private const val TAG = "StackFragment"
+        private const val TAG = "NavHostFragment"
     }
 }
