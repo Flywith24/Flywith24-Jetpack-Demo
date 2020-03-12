@@ -1,9 +1,7 @@
 package com.flywith24.fragment.stack.multiple
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.fragment.app.commit
 import androidx.fragment.app.commitNow
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentMultipleParentBinding
@@ -24,44 +22,34 @@ class MultipleStackParentFragment :
 
     private val stackList = ArrayList<StackFragment>()
     override fun init(savedInstanceState: Bundle?) {
-        childFragmentManager.registerFragmentLifecycleCallbacks(
-            StackFragment.StackLifecycleCallback(),
-            false
-        )
+
         currentFragment = name(DESTINATIONS[0])
-        for (index in DESTINATIONS.indices) {
+        DESTINATIONS.forEachIndexed { index, id ->
             childFragmentManager.commitNow {
-                val fragment =
-                    StackFragment.newInstance(index, name(DESTINATIONS[index]))
+                val fragment = StackFragment.newInstance(index, name(id))
                 stackList.add(fragment)
                 add(R.id.inner_container, fragment, fragment.stableTag)
             }
         }
-        /*    for (id in DESTINATIONS) {
-                childFragmentManager.commitNow {
-                    val fragment =
-                        MultipleStackChildFragment.newInstance(name(id), 1)
-                    add(R.id.inner_container, fragment, fragment.stableTag)
-                }
-            }*/
         binding.tabs.addOnButtonCheckedListener { _, checkId, isChecked ->
             if (isChecked) {
-                currentFragment = name(checkId)
-                childFragmentManager.commit {
-                    transactions@ for (fragment in stackList)
-                        when {
-                            fragment.name == currentFragment && !fragment.isDetached -> continue@transactions
-                            fragment.name == currentFragment && fragment.isDetached -> attach(
-                                fragment
-                            )
-                            else -> if (!fragment.isDetached) detach(fragment)
+                childFragmentManager.commitNow {
+                    stackList.forEach { item ->
+                        if (name(checkId) == item.name) {
+                            attach(item)
+                            setPrimaryNavigationFragment(item)
+                        } else {
+                            detach(item)
                         }
+                    }
                 }
             }
         }
+        binding.tabs.check(DESTINATIONS[0])
     }
 
     companion object {
         private val DESTINATIONS = intArrayOf(R.id.first, R.id.second, R.id.third)
+        const val TAG = "yyz11"
     }
 }

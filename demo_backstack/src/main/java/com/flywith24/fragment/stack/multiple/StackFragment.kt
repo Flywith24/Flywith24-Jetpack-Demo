@@ -1,10 +1,9 @@
 package com.flywith24.fragment.stack.multiple
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.commit
 import androidx.fragment.app.commitNow
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentStackBinding
@@ -34,10 +33,24 @@ class StackFragment : BaseFragment<FragmentStackBinding>(R.layout.fragment_stack
             if (isEnabled) childFragmentManager.popBackStack()
             else requireActivity().onBackPressed()
         }
-
-        childFragmentManager.commitNow {
-            add(R.id.content, MultipleStackChildFragment.newInstance(name, 1))
+        if (childFragmentManager.primaryNavigationFragment == null) {
+            childFragmentManager.commitNow {
+                val fragment = MultipleStackChildFragment.newInstance(name, 1)
+                setPrimaryNavigationFragment(fragment)
+                add(R.id.content, fragment)
+            }
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.i(TAG, "onAttach: $name")
+
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.i(TAG, "onDetach: $name")
     }
 
     companion object {
@@ -46,21 +59,7 @@ class StackFragment : BaseFragment<FragmentStackBinding>(R.layout.fragment_stack
                 this.index = index
                 this.name = name
             }
-    }
 
-    class StackLifecycleCallback : FragmentManager.FragmentLifecycleCallbacks() {
-        override fun onFragmentCreated(
-            fm: FragmentManager,
-            f: Fragment,
-            savedInstanceState: Bundle?
-        ) {
-            if (f is StackFragment) {
-                (f.parentFragment as? MultipleStackParentFragment)?.let {
-                    if (it.currentFragment != f.name && !f.isDetached) {
-                        fm.commit { detach(f) }
-                    }
-                }
-            }
-        }
+        private const val TAG = "StackFragment"
     }
 }
