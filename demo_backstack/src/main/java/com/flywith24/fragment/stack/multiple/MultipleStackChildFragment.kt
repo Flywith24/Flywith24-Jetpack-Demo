@@ -2,13 +2,10 @@ package com.flywith24.fragment.stack.multiple
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentMultipleChildBinding
 import com.flywith24.library.base.BaseFragment
-import com.flywith24.library.base.ext.addOnBackPressedCallback
 import com.flywith24.library.base.ext.args
 
 /**
@@ -30,7 +27,7 @@ class MultipleStackChildFragment :
 
     override fun init(savedInstanceState: Bundle?) {
 
-        binding.text.text = getString(R.string.fragmentHint, name, depth)
+        binding.text.text = getString(R.string.fragmentHint, name, depth.toString())
         binding.text.setOnClickListener {
             parentFragmentManager.commit {
                 addToBackStack(name)

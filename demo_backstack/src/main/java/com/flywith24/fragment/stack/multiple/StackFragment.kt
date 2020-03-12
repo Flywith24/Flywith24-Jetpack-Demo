@@ -33,11 +33,12 @@ class StackFragment : BaseFragment<FragmentStackBinding>(R.layout.fragment_stack
             if (isEnabled) childFragmentManager.popBackStack()
             else requireActivity().onBackPressed()
         }
-        if (childFragmentManager.primaryNavigationFragment == null) {
+        if (childFragmentManager.findFragmentByTag("${name}1") == null) {
+            Log.i(TAG, "commitNow: $name")
             childFragmentManager.commitNow {
                 val fragment = MultipleStackChildFragment.newInstance(name, 1)
                 setPrimaryNavigationFragment(fragment)
-                add(R.id.content, fragment)
+                add(R.id.content, fragment, "${name}1")
             }
         }
     }
