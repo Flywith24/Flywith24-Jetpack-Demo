@@ -7,7 +7,7 @@
 | module | 描述                |
 |----------------------|-----------------------------|
 | demo\_singlefragment | 最简单的场景生命周期分析                |
-| demo\_backstack      | fragment 返回栈，未完成，待后续更新      |
+| demo\_backstack      | fragment 返回栈（包括单返回栈和多返回栈）      |
 | demo\_viewpager2     | fragment \+ viewpager2 demo |
 
 
