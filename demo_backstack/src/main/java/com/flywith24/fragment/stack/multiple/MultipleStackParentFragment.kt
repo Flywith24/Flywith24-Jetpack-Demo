@@ -18,12 +18,10 @@ class MultipleStackParentFragment :
     override fun initBinding(view: View): FragmentMultipleParentBinding =
         FragmentMultipleParentBinding.bind(view)
 
-    lateinit var currentFragment: String
 
     private val stackList = ArrayList<NavHostFragment>()
     override fun init(savedInstanceState: Bundle?) {
 
-        currentFragment = name(DESTINATIONS[0])
         DESTINATIONS.forEachIndexed { index, id ->
             childFragmentManager.commitNow {
                 val fragment = NavHostFragment.newInstance(index, name(id))
