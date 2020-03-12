@@ -1,4 +1,4 @@
-package com.flywith24.fragment.stack.independent
+package com.flywith24.fragment.stack.single
 
 import android.os.Bundle
 import android.view.View
@@ -13,9 +13,9 @@ import com.flywith24.library.base.ext.addOnBackPressedCallback
  * @date   2020/3/4
  * time   10:02
  * description  独立返回栈父fragment
- * parentFragment 包含四个返回栈，各个返回栈中显示若干[IndependentStackChildFragment]
+ * parentFragment 包含四个返回栈，各个返回栈中显示若干[SingleStackChildFragment]
  */
-class IndependentStackParentFragment :
+class SigleStackParentFragment :
     BaseFragment<FragmentParentBinding>(R.layout.fragment_parent) {
     override fun initBinding(view: View): FragmentParentBinding = FragmentParentBinding.bind(view)
 
@@ -33,7 +33,7 @@ class IndependentStackParentFragment :
             for (containerId in containerIds) {
                 childFragmentManager.commit {
                     val fragment =
-                        IndependentStackChildFragment.newInstance(
+                        SingleStackChildFragment.newInstance(
                             name(containerId),
                             1
                         )

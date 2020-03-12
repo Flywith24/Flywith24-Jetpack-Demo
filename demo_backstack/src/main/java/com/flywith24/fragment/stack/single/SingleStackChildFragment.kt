@@ -1,4 +1,4 @@
-package com.flywith24.fragment.stack.independent
+package com.flywith24.fragment.stack.single
 
 import android.os.Bundle
 import android.view.View
@@ -15,9 +15,9 @@ import com.flywith24.library.base.ext.args
  * time   10:16
  * description 独立返回栈 子fragment
  * childFragment 显示stack名字及fragment个数,
- * fragmentManager 共用[IndependentStackParentFragment]的[getChildFragmentManager]
+ * fragmentManager 共用[SigleStackParentFragment]的[getChildFragmentManager]
  */
-class IndependentStackChildFragment : BaseFragment<FragmentChildBinding>(R.layout.fragment_child) {
+class SingleStackChildFragment : BaseFragment<FragmentChildBinding>(R.layout.fragment_child) {
     override fun initBinding(view: View): FragmentChildBinding = FragmentChildBinding.bind(view)
 
     val stableTag: String
@@ -70,8 +70,8 @@ class IndependentStackChildFragment : BaseFragment<FragmentChildBinding>(R.layou
     }
 
     companion object {
-        fun newInstance(name: String, depth: Int): IndependentStackChildFragment =
-            IndependentStackChildFragment().apply {
+        fun newInstance(name: String, depth: Int): SingleStackChildFragment =
+            SingleStackChildFragment().apply {
                 this.name = name
                 this.depth = depth
             }
