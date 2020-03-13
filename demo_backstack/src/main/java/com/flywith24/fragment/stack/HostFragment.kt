@@ -22,7 +22,6 @@ class HostFragment : BaseFragment<FragmentHostBinding>(R.layout.fragment_host) {
             }
         }
         binding.multipleClick.setOnClickListener {
-            //todo 待完成
             parentFragmentManager.commit {
                 addToBackStack(null)
                 replace<MultipleStackParentFragment>(R.id.content)

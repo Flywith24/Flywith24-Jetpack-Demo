@@ -5,7 +5,7 @@ import android.view.View
 import androidx.fragment.app.commit
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentParentBinding
-import com.flywith24.library.base.BaseFragment
+import com.flywith24.fragment.stack.common.BaseStackFragment
 import com.flywith24.library.base.ext.addOnBackPressedCallback
 
 /**
@@ -16,7 +16,7 @@ import com.flywith24.library.base.ext.addOnBackPressedCallback
  * parentFragment 包含四个返回栈，各个返回栈中显示若干[SingleStackChildFragment]
  */
 class SingleStackParentFragment :
-    BaseFragment<FragmentParentBinding>(R.layout.fragment_parent) {
+    BaseStackFragment<FragmentParentBinding>(R.layout.fragment_parent) {
     override fun initBinding(view: View): FragmentParentBinding = FragmentParentBinding.bind(view)
 
     override fun init(savedInstanceState: Bundle?) {
@@ -30,7 +30,7 @@ class SingleStackParentFragment :
         }
 
         if (savedInstanceState == null) {
-            for (containerId in containerIds) {
+            for (containerId in mStackIds) {
                 childFragmentManager.commit {
                     val fragment =
                         SingleStackChildFragment.newInstance(
@@ -42,11 +42,4 @@ class SingleStackParentFragment :
             }
         }
     }
-
-    private val containerIds = intArrayOf(
-        R.id.stack_1,
-        R.id.stack_2,
-        R.id.stack_3,
-        R.id.stack_4
-    )
 }

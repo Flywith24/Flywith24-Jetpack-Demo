@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">Flywith24-Fragment-Demo</string>
     <string name="fragmentHint">%1$s\n\n%2$s</string>
-    <string name="first">first</string>
-    <string name="second">second</string>
-    <string name="third">third</string>
-
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first">♥</string>
+    <string name="second">♦</string>
+    <string name="third">♠</string>
+    <string name="fourth">♣</string>
     <string name="independent">single back stack</string>
     <string name="multiple">multiple back stack</string>
     <string name="done">%1$s发完了</string>

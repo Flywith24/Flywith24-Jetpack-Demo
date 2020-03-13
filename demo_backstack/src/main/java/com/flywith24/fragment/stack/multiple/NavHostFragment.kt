@@ -44,12 +44,13 @@ class NavHostFragment : BaseFragment<FragmentStackBinding>(R.layout.fragment_sta
     }
 
     override fun init(savedInstanceState: Bundle?) {
-        if (childFragmentManager.findFragmentByTag("${name}1") == null) {
+        val firstTag = "${name}1"
+        if (childFragmentManager.findFragmentByTag(firstTag) == null) {
             Log.i(TAG, "commitNow: $name")
             childFragmentManager.commitNow {
                 val fragment = MultipleStackChildFragment.newInstance(name, 1)
 //                setPrimaryNavigationFragment(fragment)
-                add(R.id.content, fragment, "${name}1")
+                add(R.id.content, fragment, firstTag)
             }
         }
     }

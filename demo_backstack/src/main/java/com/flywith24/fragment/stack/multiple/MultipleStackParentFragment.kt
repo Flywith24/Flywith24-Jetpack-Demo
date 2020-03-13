@@ -6,7 +6,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.commitNow
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentMultipleParentBinding
-import com.flywith24.library.base.BaseFragment
+import com.flywith24.fragment.stack.common.BaseStackFragment
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -17,16 +17,16 @@ import kotlin.collections.ArrayList
  * description 多返回栈 父fragment
  */
 class MultipleStackParentFragment :
-    BaseFragment<FragmentMultipleParentBinding>(R.layout.fragment_multiple_parent) {
+    BaseStackFragment<FragmentMultipleParentBinding>(R.layout.fragment_multiple_parent) {
     override fun initBinding(view: View): FragmentMultipleParentBinding =
         FragmentMultipleParentBinding.bind(view)
 
     /**
      * 返回栈顺序,存储返回栈id
      */
-    private val orderStack = ArrayDeque<Int>()
+    private val mOrderStack = ArrayDeque<Int>()
 
-    private val stackList = ArrayList<NavHostFragment>()
+    private val mStackList = ArrayList<NavHostFragment>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,12 +35,12 @@ class MultipleStackParentFragment :
             this,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    if (!orderStack.isNullOrEmpty()) {
+                    if (!mOrderStack.isNullOrEmpty()) {
                         //移除栈顶 stackId
-                        orderStack.removeFirst()
-                        if (orderStack.isNotEmpty()) {
+                        mOrderStack.removeFirst()
+                        if (mOrderStack.isNotEmpty()) {
                             //将新的栈顶 显示
-                            binding.tabs.check(orderStack.first)
+                            binding.tabs.check(mOrderStack.first)
                             return
                         }
                     }
@@ -52,20 +52,20 @@ class MultipleStackParentFragment :
     override fun init(savedInstanceState: Bundle?) {
 
         //add NavHostFragment
-        DESTINATIONS.forEachIndexed { index, id ->
+        mStackIds.forEachIndexed { index, id ->
             childFragmentManager.commitNow {
                 val fragment = NavHostFragment.newInstance(index, name(id))
-                stackList.add(fragment)
+                mStackList.add(fragment)
                 add(R.id.inner_container, fragment, fragment.stableTag)
             }
         }
         binding.tabs.addOnButtonCheckedListener { _, checkId, isChecked ->
             if (isChecked) {
                 //被选中的 先出栈，再入栈顶
-                orderStack.remove(checkId)
-                orderStack.push(checkId)
+                mOrderStack.remove(checkId)
+                mOrderStack.push(checkId)
                 childFragmentManager.commitNow {
-                    stackList.forEach { item ->
+                    mStackList.forEach { item ->
                         if (name(checkId) == item.name) {
                             attach(item)
                             setPrimaryNavigationFragment(item)
@@ -77,10 +77,6 @@ class MultipleStackParentFragment :
             }
         }
         //默认选中 first
-        binding.tabs.check(DESTINATIONS[0])
-    }
-
-    companion object {
-        private val DESTINATIONS = intArrayOf(R.id.first, R.id.second, R.id.third)
+        binding.tabs.check(mStackIds[0])
     }
 }

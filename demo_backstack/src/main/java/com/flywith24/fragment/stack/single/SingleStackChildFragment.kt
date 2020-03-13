@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.fragment.app.commit
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentChildBinding
-import com.flywith24.library.base.BaseFragment
+import com.flywith24.fragment.stack.common.BaseStackFragment
 import com.flywith24.library.base.ext.args
 
 /**
@@ -17,7 +17,7 @@ import com.flywith24.library.base.ext.args
  * childFragment 显示stack名字及fragment个数,
  * fragmentManager 共用[SingleStackParentFragment]的[getChildFragmentManager]
  */
-class SingleStackChildFragment : BaseFragment<FragmentChildBinding>(R.layout.fragment_child) {
+class SingleStackChildFragment : BaseStackFragment<FragmentChildBinding>(R.layout.fragment_child) {
     override fun initBinding(view: View): FragmentChildBinding = FragmentChildBinding.bind(view)
 
     val stableTag: String
@@ -29,7 +29,7 @@ class SingleStackChildFragment : BaseFragment<FragmentChildBinding>(R.layout.fra
 
     override fun init(savedInstanceState: Bundle?) {
 
-        binding.button.text = getString(R.string.fragmentHint, getValue(), getCount(depth))
+        binding.button.text = getString(R.string.fragmentHint, name(id), getCount(depth))
         binding.button.setOnClickListener {
             if (depth < 13) {
                 parentFragmentManager.commit {
@@ -40,12 +40,12 @@ class SingleStackChildFragment : BaseFragment<FragmentChildBinding>(R.layout.fra
                             depth + 1
                         )
                     )
-                    addToBackStack(getValue())
+                    addToBackStack(name(id))
                 }
             } else {
                 Toast.makeText(
                         requireContext(),
-                        getString(R.string.done, getValue()),
+                        getString(R.string.done, name(id)),
                         Toast.LENGTH_SHORT
                     )
                     .show()
@@ -53,21 +53,6 @@ class SingleStackChildFragment : BaseFragment<FragmentChildBinding>(R.layout.fra
         }
     }
 
-    private fun getCount(value: Int): String = when (value) {
-        11 -> "J"
-        12 -> "Q"
-        13 -> "K"
-        1 -> "A"
-        else -> value.toString()
-    }
-
-    private fun getValue(): String = when (id) {
-        R.id.stack_1 -> "♥"
-        R.id.stack_2 -> "♦"
-        R.id.stack_3 -> "♠"
-        R.id.stack_4 -> "♣"
-        else -> ""
-    }
 
     companion object {
         fun newInstance(name: String, depth: Int): SingleStackChildFragment =
