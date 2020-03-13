@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Flywith24-Fragment-Demo</string>
     <string name="fragmentHint">%1$s\n\n%2$s\n%3$s %4$s</string>
+    <string name="fragmentHint1">%1$s\n\n%2$s</string>
     <string name="first">♥</string>
     <string name="second">♦</string>
     <string name="third">♠</string>

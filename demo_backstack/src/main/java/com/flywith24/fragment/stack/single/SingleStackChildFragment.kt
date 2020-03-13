@@ -31,7 +31,7 @@ class SingleStackChildFragment :
 
     override fun init(savedInstanceState: Bundle?) {
 
-        binding.button.text = getString(R.string.fragmentHint, name(id), getCount(depth))
+        binding.button.text = getString(R.string.fragmentHint1, name(id), getCount(depth))
         binding.button.setOnClickListener {
             if (depth < 13) {
                 parentFragmentManager.commit {
