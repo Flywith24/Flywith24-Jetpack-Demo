@@ -1,7 +1,6 @@
 package com.flywith24.fragment.stack.multiple
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.commit
 import com.flywith24.fragment.R
@@ -35,7 +34,6 @@ class MultipleStackChildFragment :
                 replace(R.id.content, newInstance(name, depth + 1))
             }
         }
-        Log.i("yyz11", "$name child ${parentFragmentManager.backStackEntryCount}")
     }
 
     companion object {
