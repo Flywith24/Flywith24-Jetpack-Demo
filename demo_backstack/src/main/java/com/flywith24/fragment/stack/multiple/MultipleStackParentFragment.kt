@@ -2,6 +2,7 @@ package com.flywith24.fragment.stack.multiple
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.commitNow
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentMultipleParentBinding
@@ -18,8 +19,25 @@ class MultipleStackParentFragment :
     override fun initBinding(view: View): FragmentMultipleParentBinding =
         FragmentMultipleParentBinding.bind(view)
 
-
     private val stackList = ArrayList<NavHostFragment>()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //拦截返回键
+        requireActivity().onBackPressedDispatcher.addCallback(
+            this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    for (index in stackList.indices) {
+                        if (stackList[index].childFragmentManager.backStackEntryCount > 0) {
+                            binding.tabs.check(DESTINATIONS[index])
+                            return
+                        }
+                    }
+                    requireActivity().supportFragmentManager.popBackStack()
+                }
+            })
+    }
+
     override fun init(savedInstanceState: Bundle?) {
 
         DESTINATIONS.forEachIndexed { index, id ->

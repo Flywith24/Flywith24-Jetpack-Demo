@@ -4,11 +4,11 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.commitNow
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentStackBinding
 import com.flywith24.library.base.BaseFragment
-import com.flywith24.library.base.ext.addOnBackPressedCallback
 import com.flywith24.library.base.ext.args
 
 /**
@@ -27,18 +27,28 @@ class NavHostFragment : BaseFragment<FragmentStackBinding>(R.layout.fragment_sta
     internal var index: Int by args()
     var name: String by args()
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        //拦截返回键
+        requireActivity().onBackPressedDispatcher.addCallback(
+            this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    isEnabled = childFragmentManager.backStackEntryCount > 0
+                    if (isEnabled) childFragmentManager.popBackStackImmediate()
+                    else requireActivity().onBackPressedDispatcher.onBackPressed()
+                }
+            })
+    }
+
     override fun init(savedInstanceState: Bundle?) {
-        //返回键拦截
-        addOnBackPressedCallback {
-            isEnabled = childFragmentManager.backStackEntryCount != 0
-            if (isEnabled) childFragmentManager.popBackStack()
-            else requireActivity().onBackPressed()
-        }
         if (childFragmentManager.findFragmentByTag("${name}1") == null) {
             Log.i(TAG, "commitNow: $name")
             childFragmentManager.commitNow {
                 val fragment = MultipleStackChildFragment.newInstance(name, 1)
-                setPrimaryNavigationFragment(fragment)
+//                setPrimaryNavigationFragment(fragment)
                 add(R.id.content, fragment, "${name}1")
             }
         }
