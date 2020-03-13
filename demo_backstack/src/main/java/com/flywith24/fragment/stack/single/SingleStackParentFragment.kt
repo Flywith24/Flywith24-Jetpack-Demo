@@ -15,7 +15,7 @@ import com.flywith24.library.base.ext.addOnBackPressedCallback
  * description  独立返回栈父fragment
  * parentFragment 包含四个返回栈，各个返回栈中显示若干[SingleStackChildFragment]
  */
-class SigleStackParentFragment :
+class SingleStackParentFragment :
     BaseFragment<FragmentParentBinding>(R.layout.fragment_parent) {
     override fun initBinding(view: View): FragmentParentBinding = FragmentParentBinding.bind(view)
 

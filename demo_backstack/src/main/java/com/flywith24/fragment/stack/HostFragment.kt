@@ -7,7 +7,7 @@ import androidx.fragment.app.replace
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentHostBinding
 import com.flywith24.fragment.stack.multiple.MultipleStackParentFragment
-import com.flywith24.fragment.stack.single.SigleStackParentFragment
+import com.flywith24.fragment.stack.single.SingleStackParentFragment
 import com.flywith24.library.base.BaseFragment
 
 
@@ -18,7 +18,7 @@ class HostFragment : BaseFragment<FragmentHostBinding>(R.layout.fragment_host) {
         binding.independentClick.setOnClickListener {
             parentFragmentManager.commit {
                 addToBackStack(null)
-                replace<SigleStackParentFragment>(R.id.content)
+                replace<SingleStackParentFragment>(R.id.content)
             }
         }
         binding.multipleClick.setOnClickListener {

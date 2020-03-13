@@ -15,7 +15,7 @@ import com.flywith24.library.base.ext.args
  * time   10:16
  * description 独立返回栈 子fragment
  * childFragment 显示stack名字及fragment个数,
- * fragmentManager 共用[SigleStackParentFragment]的[getChildFragmentManager]
+ * fragmentManager 共用[SingleStackParentFragment]的[getChildFragmentManager]
  */
 class SingleStackChildFragment : BaseFragment<FragmentChildBinding>(R.layout.fragment_child) {
     override fun initBinding(view: View): FragmentChildBinding = FragmentChildBinding.bind(view)
