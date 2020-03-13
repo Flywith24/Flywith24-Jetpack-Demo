@@ -6,7 +6,7 @@
     tools:context="com.flywith24.fragment.stack.HostFragment">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/independentClick"
+        android:id="@+id/singleStack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_96"
@@ -16,12 +16,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/multipleClick"
+        android:id="@+id/multipleStack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_96"
         android:text="@string/multiple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/independentClick" />
+        app:layout_constraintTop_toBottomOf="@id/singleStack" />
 </androidx.constraintlayout.widget.ConstraintLayout>

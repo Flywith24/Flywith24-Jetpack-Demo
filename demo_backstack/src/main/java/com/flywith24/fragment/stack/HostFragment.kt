@@ -15,13 +15,13 @@ class HostFragment : BaseFragment<FragmentHostBinding>(R.layout.fragment_host) {
     override fun initBinding(view: View): FragmentHostBinding = FragmentHostBinding.bind(view)
 
     override fun init(savedInstanceState: Bundle?) {
-        binding.independentClick.setOnClickListener {
+        binding.singleStack.setOnClickListener {
             parentFragmentManager.commit {
                 addToBackStack(null)
                 replace<SingleStackParentFragment>(R.id.content)
             }
         }
-        binding.multipleClick.setOnClickListener {
+        binding.multipleStack.setOnClickListener {
             parentFragmentManager.commit {
                 addToBackStack(null)
                 replace<MultipleStackParentFragment>(R.id.content)

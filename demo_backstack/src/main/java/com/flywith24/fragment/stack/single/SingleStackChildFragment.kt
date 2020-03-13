@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.commit
 import com.flywith24.fragment.R
-import com.flywith24.fragment.databinding.FragmentChildBinding
+import com.flywith24.fragment.databinding.FragmentSingleChildBinding
 import com.flywith24.fragment.stack.common.BaseStackFragment
 import com.flywith24.library.base.ext.args
 
@@ -17,8 +17,10 @@ import com.flywith24.library.base.ext.args
  * childFragment 显示stack名字及fragment个数,
  * fragmentManager 共用[SingleStackParentFragment]的[getChildFragmentManager]
  */
-class SingleStackChildFragment : BaseStackFragment<FragmentChildBinding>(R.layout.fragment_child) {
-    override fun initBinding(view: View): FragmentChildBinding = FragmentChildBinding.bind(view)
+class SingleStackChildFragment :
+    BaseStackFragment<FragmentSingleChildBinding>(R.layout.fragment_single_child) {
+    override fun initBinding(view: View): FragmentSingleChildBinding =
+        FragmentSingleChildBinding.bind(view)
 
     val stableTag: String
         get() = "${javaClass.simpleName}-$name-$depth"

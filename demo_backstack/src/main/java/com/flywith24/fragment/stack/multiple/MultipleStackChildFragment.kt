@@ -20,7 +20,6 @@ class MultipleStackChildFragment :
     override fun initBinding(view: View): FragmentMultipleChildBinding =
         FragmentMultipleChildBinding.bind(view)
 
-
     val stableTag: String
         get() = "${javaClass.simpleName}-$name-$depth"
     private var name: String by args()

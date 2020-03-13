@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.commit
 import com.flywith24.fragment.R
-import com.flywith24.fragment.databinding.FragmentParentBinding
+import com.flywith24.fragment.databinding.FragmentSingleParentBinding
+
 import com.flywith24.fragment.stack.common.BaseStackFragment
 import com.flywith24.library.base.ext.addOnBackPressedCallback
 
@@ -16,8 +17,9 @@ import com.flywith24.library.base.ext.addOnBackPressedCallback
  * parentFragment 包含四个返回栈，各个返回栈中显示若干[SingleStackChildFragment]
  */
 class SingleStackParentFragment :
-    BaseStackFragment<FragmentParentBinding>(R.layout.fragment_parent) {
-    override fun initBinding(view: View): FragmentParentBinding = FragmentParentBinding.bind(view)
+    BaseStackFragment<FragmentSingleParentBinding>(R.layout.fragment_single_parent) {
+    override fun initBinding(view: View): FragmentSingleParentBinding =
+        FragmentSingleParentBinding.bind(view)
 
     override fun init(savedInstanceState: Bundle?) {
         //返回键拦截

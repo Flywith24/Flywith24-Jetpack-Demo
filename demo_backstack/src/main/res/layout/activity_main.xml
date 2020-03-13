@@ -5,6 +5,4 @@
     android:name="com.flywith24.fragment.stack.HostFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".stack.MainActivity">
-
-</androidx.fragment.app.FragmentContainerView>
+    tools:context=".stack.MainActivity" />
