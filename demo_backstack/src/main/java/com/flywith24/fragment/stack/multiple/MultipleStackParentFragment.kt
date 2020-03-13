@@ -7,6 +7,8 @@ import androidx.fragment.app.commitNow
 import com.flywith24.fragment.R
 import com.flywith24.fragment.databinding.FragmentMultipleParentBinding
 import com.flywith24.library.base.BaseFragment
+import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * @author yyz (杨云召)
@@ -19,7 +21,13 @@ class MultipleStackParentFragment :
     override fun initBinding(view: View): FragmentMultipleParentBinding =
         FragmentMultipleParentBinding.bind(view)
 
+    /**
+     * 返回栈顺序,存储返回栈id
+     */
+    private val orderStack = ArrayDeque<Int>()
+
     private val stackList = ArrayList<NavHostFragment>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //拦截返回键
@@ -27,9 +35,12 @@ class MultipleStackParentFragment :
             this,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    for (index in stackList.indices) {
-                        if (stackList[index].childFragmentManager.backStackEntryCount > 0) {
-                            binding.tabs.check(DESTINATIONS[index])
+                    if (!orderStack.isNullOrEmpty()) {
+                        //移除栈顶 stackId
+                        orderStack.removeFirst()
+                        if (orderStack.isNotEmpty()) {
+                            //将新的栈顶 显示
+                            binding.tabs.check(orderStack.first)
                             return
                         }
                     }
@@ -40,6 +51,7 @@ class MultipleStackParentFragment :
 
     override fun init(savedInstanceState: Bundle?) {
 
+        //add NavHostFragment
         DESTINATIONS.forEachIndexed { index, id ->
             childFragmentManager.commitNow {
                 val fragment = NavHostFragment.newInstance(index, name(id))
@@ -49,6 +61,9 @@ class MultipleStackParentFragment :
         }
         binding.tabs.addOnButtonCheckedListener { _, checkId, isChecked ->
             if (isChecked) {
+                //被选中的 先出栈，再入栈顶
+                orderStack.remove(checkId)
+                orderStack.push(checkId)
                 childFragmentManager.commitNow {
                     stackList.forEach { item ->
                         if (name(checkId) == item.name) {
@@ -61,6 +76,7 @@ class MultipleStackParentFragment :
                 }
             }
         }
+        //默认选中 first
         binding.tabs.check(DESTINATIONS[0])
     }
 
