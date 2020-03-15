@@ -17,7 +17,7 @@
 
 - [【背上Jetpack之Fragment】从源码角度看Fragment的启动流程及生命周期 基于AndroidX Fragment1.2.2](https://juejin.im/post/5e67523551882549003d2c4f)
 
-- todo 从源码角度看Fragment返回栈
+- [【背上Jetpack】从源码的角度看Fragment 返回栈 附多返回栈demo](https://juejin.im/post/5e6e50a3518825490762098b)
 
 ## screenshot
 
@@ -26,3 +26,5 @@
 ![](./screenshot/screenshot2.gif)
 
 ![](./screenshot/screenshot3.gif)
+
+![](./screenshot/screenshot4.gif)
