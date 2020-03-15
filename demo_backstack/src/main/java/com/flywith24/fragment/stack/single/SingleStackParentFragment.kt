@@ -25,7 +25,10 @@ class SingleStackParentFragment :
         //返回键拦截
         addOnBackPressedCallback {
             isEnabled = childFragmentManager.backStackEntryCount != 0
-//            if (isEnabled) childFragmentManager.popBackStack("♥", 1)
+            //flag可以为 0 或者FragmentManager.POP_BACK_STACK_INCLUSIVE
+            // 0 表示只弹出该元素以上的所有元素
+            // POP_BACK_STACK_INCLUSIVE 表示弹出包含该元素及以上的所有元素
+//            if (isEnabled) childFragmentManager.popBackStack("♥",  androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE)
 //            if (isEnabled) childFragmentManager.popBackStack("♥", 0)
             if (isEnabled) childFragmentManager.popBackStack()
             else requireActivity().onBackPressed()
