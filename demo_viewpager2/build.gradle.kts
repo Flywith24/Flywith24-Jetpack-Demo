@@ -1,12 +1,9 @@
 plugins {
     id("com.android.application")
     id("com.build.plugin")
-    id 'kotlin-android'
-    id 'kotlin-android-extensions'
 }
 android { defaultConfig { applicationId = "com.flywith24.demo_viewpager2" } }
 
 dependencies {
     implementation(project(":library_base"))
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
