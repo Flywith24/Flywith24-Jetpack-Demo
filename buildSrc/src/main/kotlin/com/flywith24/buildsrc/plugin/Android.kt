@@ -36,7 +36,7 @@ internal fun Project.configureAndroid() = this.extensions.findByType<BaseExtensi
     buildTypes {
         getByName("release") {
 
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
 
