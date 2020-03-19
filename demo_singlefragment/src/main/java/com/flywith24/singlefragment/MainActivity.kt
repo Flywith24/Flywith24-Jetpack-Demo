@@ -30,11 +30,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 // 最终都调用  addOp(new Op(opcmd, fragment)) →   mOps.add(op);
                 .add(R.id.container, BlankFragment.newInstance())
                 //4. 可选 mAddToBackStack = true;
-                // .addToBackStack(null) 返回栈这里先不讨论
+                .addToBackStack(null) //返回栈这里先不讨论
                 //5. BackStackRecord中实现具体逻辑，同类型的方法有
                 //commit commitAllowingStateLoss
                 //commitNow commitNowAllowingStateLoss
-                .commitNow()
+                .commit()
         }
     }
 

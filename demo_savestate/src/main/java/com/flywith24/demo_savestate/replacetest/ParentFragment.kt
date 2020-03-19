@@ -1,4 +1,4 @@
-package com.flywith24.demo_savestate
+package com.flywith24.demo_savestate.replacetest
 
 import android.os.Bundle
 import android.text.Editable
@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import com.flywith24.demo_savestate.R
 import com.flywith24.demo_savestate.databinding.FragentFirstBinding
 import com.flywith24.library.base.BaseFragment
 
@@ -24,7 +25,7 @@ import com.flywith24.library.base.BaseFragment
  * 步骤3 旋转屏幕后 EditText 和 TextView 均恢复到之前的状态，[label] 无值
  *
  */
-class FirstFragment : BaseFragment<FragentFirstBinding>(R.layout.fragent_first) {
+class ParentFragment : BaseFragment<FragentFirstBinding>(R.layout.fragent_first) {
     override fun initBinding(view: View): FragentFirstBinding = FragentFirstBinding.bind(view)
     var label = ""
 
@@ -51,7 +52,9 @@ class FirstFragment : BaseFragment<FragentFirstBinding>(R.layout.fragent_first) 
         binding.button.setOnClickListener {
             parentFragmentManager.commit {
                 addToBackStack(null)
-                replace<ChildFragment>(R.id.container)
+                replace<ChildFragment>(
+                    R.id.container
+                )
             }
         }
     }

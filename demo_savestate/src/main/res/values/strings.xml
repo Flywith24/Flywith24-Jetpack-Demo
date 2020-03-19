@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">保存状态</string>
     <string name="child">this is child</string>
-    <string name="button1_hint">测试replace状态保存</string>
+    <string name="button1_hint">replace fragment save view</string>
+    <string name="button2_hint">ViewModel with SaveState</string>
+    <string name="button3_hint">ViewModel without SaveState</string>
+    <string name="click">click</string>
 
 </resources>

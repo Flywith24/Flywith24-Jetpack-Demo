@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.flywith24.demo_savestate.databinding.FragmentHostBinding
+import com.flywith24.demo_savestate.replacetest.ParentFragment
 import com.flywith24.library.base.BaseFragment
 
 /**
@@ -20,7 +21,7 @@ class HostFragment : BaseFragment<FragmentHostBinding>(R.layout.fragment_host) {
         binding.button1.setOnClickListener {
             parentFragmentManager.commit {
                 addToBackStack(null)
-                replace<FirstFragment>(R.id.container)
+                replace<ParentFragment>(R.id.container)
             }
         }
     }
