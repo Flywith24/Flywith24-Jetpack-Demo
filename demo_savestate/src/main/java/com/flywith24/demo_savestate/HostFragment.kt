@@ -7,7 +7,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.flywith24.demo_savestate.databinding.FragmentHostBinding
 import com.flywith24.demo_savestate.replacetest.ParentFragment
-import com.flywith24.demo_savestate.viewmodelsavestate.ViewModelWithSavedStateFragment
+import com.flywith24.demo_savestate.viewmodelwithsavestate.ViewModelWithSavedStateFragment
 import com.flywith24.library.base.BaseFragment
 
 /**

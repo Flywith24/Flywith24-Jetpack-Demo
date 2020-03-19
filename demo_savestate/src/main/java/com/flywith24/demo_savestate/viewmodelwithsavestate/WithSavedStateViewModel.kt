@@ -1,4 +1,4 @@
-package com.flywith24.demo_savestate.viewmodelsavestate
+package com.flywith24.demo_savestate.viewmodelwithsavestate
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
