@@ -5,5 +5,7 @@
     <string name="button2_hint">ViewModel with SaveState</string>
     <string name="button3_hint">ViewModel without SaveState</string>
     <string name="click">click</string>
+    <string name="save">save</string>
+    <string name="hint">请输入内容</string>
 
 </resources>
