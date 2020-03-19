@@ -27,4 +27,12 @@
         app:layout_constraintStart_toStartOf="@id/edit"
         app:layout_constraintTop_toBottomOf="@id/edit" />
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sp_20"
+        android:text="@string/text_hint"
+        app:layout_constraintStart_toStartOf="@id/edit"
+        app:layout_constraintTop_toBottomOf="@id/save" />
 </androidx.constraintlayout.widget.ConstraintLayout>

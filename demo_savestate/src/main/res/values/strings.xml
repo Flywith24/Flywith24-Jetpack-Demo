@@ -7,5 +7,7 @@
     <string name="click">click</string>
     <string name="save">save</string>
     <string name="hint">请输入内容</string>
+    <string name="saved_in_viewmodel">Saved in ViewModel:%s</string>
+    <string name="text_hint">Saved in ViewModel:</string>
 
 </resources>
