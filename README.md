@@ -6,9 +6,11 @@
 
 | module | 描述                |
 |----------------------|-----------------------------|
-| demo\_singlefragment | 最简单的场景生命周期分析                |
 | demo\_backstack      | fragment 返回栈（包括单返回栈和多返回栈）      |
+| demo\_savestate      | viewmodel-savestate实践 fragment replace 状态恢复测试 |
+| demo\_singlefragment | 最简单的场景生命周期分析                |
 | demo\_viewpager2     | fragment \+ viewpager2 demo |
+
 
 
 ## blog
