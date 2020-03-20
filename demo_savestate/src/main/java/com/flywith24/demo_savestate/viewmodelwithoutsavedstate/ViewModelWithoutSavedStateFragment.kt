@@ -3,7 +3,7 @@ package com.flywith24.demo_savestate.viewmodelwithoutsavedstate
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
+import androidx.lifecycle.observe
 import com.flywith24.demo_savestate.R
 import com.flywith24.demo_savestate.databinding.FragmentViewmodelBinding
 import com.flywith24.library.base.BaseFragment
@@ -31,8 +31,8 @@ class ViewModelWithoutSavedStateFragment :
     override fun init(savedInstanceState: Bundle?) {
 
         binding.save.setOnClickListener { mViewModel.setValue(binding.edit.text.toString()) }
-        mViewModel.getValue().observe(viewLifecycleOwner, Observer {
+        mViewModel.getValue().observe(viewLifecycleOwner) {
             binding.text.text = getString(R.string.saved_in_viewmodel, it)
-        })
+        }
     }
 }
