@@ -10,7 +10,7 @@ import androidx.lifecycle.LifecycleOwner
  * description
  */
 class PlayManager(
-    lifecycleOwner: LifecycleOwner,
+    private val lifecycleOwner: LifecycleOwner,
     private val listener: MainActivity.PlayStateListener
 ) :
     DefaultLifecycleObserver {
@@ -25,5 +25,9 @@ class PlayManager(
 
     override fun onPause(owner: LifecycleOwner) {
         listener.onPlayStateChanged(false)
+    }
+
+    override fun onDestroy(owner: LifecycleOwner) {
+        owner.lifecycle.removeObserver(this)
     }
 }
