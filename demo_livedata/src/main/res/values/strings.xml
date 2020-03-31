@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">demo_livedata</string>
+    <string name="click">click</string>
+    <string name="hint_error">错误示例，使用 var LiveData 只有第一次监听有效</string>
+    <string name="hint_default">default</string>
+</resources>
