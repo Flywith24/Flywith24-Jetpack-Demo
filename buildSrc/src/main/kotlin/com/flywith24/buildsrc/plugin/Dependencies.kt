@@ -35,12 +35,17 @@ internal fun Project.configureDependencies() = dependencies.apply {
 
     add(implementation, AndroidX.appcompat)
     add(implementation, AndroidX.coreKtx)
+    add(implementation, AndroidX.activityKtx)
     add(implementation, AndroidX.Fragment.fragmentKtx)
     add(debugImplementation, AndroidX.Fragment.fragmentTesting)
     add(implementation, AndroidX.constraintlayout)
     add(implementation, AndroidX.cardview)
     add(implementation, Kotlin.stdlibJdk7)
     add(implementation, Google.material)
+    add(implementation, AndroidX.Lifecycle.commonJava8)
+    add(implementation, AndroidX.Lifecycle.liveDataKtx)
+    add(implementation, AndroidX.Lifecycle.viewModelKtx)
+
 }
 
 internal fun Project.containsAndroidPlugin(): Boolean {
