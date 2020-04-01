@@ -31,7 +31,7 @@
 - [【背上Jetpack之Lifecycle】万物基于Lifecycle](https://juejin.im/post/5e8348bef265da47e02a6ce2)
 
 
-- [【【背上Jetpack之LiveData】ViewModel 的左膀右臂 数据驱动真的香](https://juejin.im/post/5e834bb5f265da480d61668d)
+- [【背上Jetpack之LiveData】ViewModel 的左膀右臂 数据驱动真的香](https://juejin.im/post/5e834bb5f265da480d61668d)
 
 
 ## screenshot
