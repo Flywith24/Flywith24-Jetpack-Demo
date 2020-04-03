@@ -4,10 +4,20 @@ import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.addCallback
+import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
+
+inline fun <reified F : Fragment> Fragment.jumpToFragment(@IdRes id: Int) {
+    parentFragmentManager.commit {
+        addToBackStack(null)
+        replace<F>(id)
+    }
+}
 
 internal val Bundle?.hashString: String
     get() = if (this == null) ""
@@ -23,8 +33,8 @@ internal val Fragment.bundleTag: String
  * then removes the [LifecycleEventObserver].
  */
 fun Fragment.doOnLifecycleEvent(
-        targetEvent: Lifecycle.Event,
-        action: () -> Unit
+    targetEvent: Lifecycle.Event,
+    action: () -> Unit
 ) = when {
     lifecycle.currentState.isAtLeast(targetEvent.toState) -> action()
     else -> lifecycle.addObserver { observer, _, event ->
@@ -85,10 +95,11 @@ private val Lifecycle.Event.toState
 
 // TODO: Create a lifecycle module and make this public there
 private fun Lifecycle.addObserver(callback: (observer: LifecycleEventObserver, source: LifecycleOwner, event: Lifecycle.Event) -> Unit) =
-        addObserver(ReferenceHoldingLifecycleObserver(callback))
+    addObserver(ReferenceHoldingLifecycleObserver(callback))
 
 private class ReferenceHoldingLifecycleObserver(
-        private val callBack: (observer: LifecycleEventObserver, source: LifecycleOwner, event: Lifecycle.Event) -> Unit
+    private val callBack: (observer: LifecycleEventObserver, source: LifecycleOwner, event: Lifecycle.Event) -> Unit
 ) : LifecycleEventObserver {
-    override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) = callBack(this, source, event)
+    override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) =
+        callBack(this, source, event)
 }
