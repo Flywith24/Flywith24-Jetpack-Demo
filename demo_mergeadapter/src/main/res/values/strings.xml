@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">demo_mergeadapter</string>
+    <string name="header">Header</string>
 </resources>
