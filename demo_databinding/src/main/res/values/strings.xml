@@ -3,4 +3,6 @@
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="default_hint">default</string>
+    <string name="normal">normal</string>
+    <string name="data_binding">DataBinding</string>
 </resources>
