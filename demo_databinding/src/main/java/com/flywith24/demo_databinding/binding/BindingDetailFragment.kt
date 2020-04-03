@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.flywith24.demo_databinding.MyViewModel
 import com.flywith24.demo_databinding.R
 import com.flywith24.demo_databinding.databinding.FragmentBindingDetailBinding
 
@@ -18,7 +17,7 @@ import com.flywith24.demo_databinding.databinding.FragmentBindingDetailBinding
  * description
  */
 class BindingDetailFragment : Fragment(R.layout.fragment_binding_detail) {
-    private val mViewModel by activityViewModels<MyViewModel>()
+    private val mViewModel by activityViewModels<BindingViewModel>()
     private lateinit var mBinding: FragmentBindingDetailBinding
 
     override fun onCreateView(

@@ -1,4 +1,4 @@
-package com.flywith24.demo_databinding
+package com.flywith24.demo_databinding.binding
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel
  * time   11:14
  * description
  */
-class MyViewModel : ViewModel() {
+class BindingViewModel : ViewModel() {
     val firstName = MutableLiveData<String>()
     val lastName = MutableLiveData<String>()
 }
