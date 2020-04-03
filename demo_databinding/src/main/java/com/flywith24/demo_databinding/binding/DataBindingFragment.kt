@@ -26,7 +26,7 @@ class DataBindingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mBinding = DataBindingUtil.inflate<FragmentDataBindingBinding>(
+        mBinding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_data_binding,
             container,
