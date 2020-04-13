@@ -15,10 +15,16 @@ import androidx.recyclerview.widget.RecyclerView
  * description
  */
 class MyAdapter : ListAdapter<String, MyAdapter.MyViewHolder>(DiffCallBack()) {
+    override fun getItemViewType(position: Int): Int =
+        if (position % 2 == 0) 0 else 1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder =
-        MyViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_username, parent, false)
+        if (viewType == 0)
+            MyViewHolder(
+                LayoutInflater.from(parent.context).inflate(R.layout.item_username, parent, false)
+            ) else MyViewHolder(
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_username_other_type, parent, false)
         )
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
