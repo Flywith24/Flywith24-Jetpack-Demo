@@ -7,6 +7,7 @@
 | module | 描述                |
 |----------------------|-----------------------------|
 | demo\_backstack      | fragment 返回栈（包括单返回栈和多返回栈）      |
+| demo\_databinding      | databinding demo      |
 | demo\_lifecycle      | lifecycle demo      |
 | demo\_livedata       | livedata demo      |
 | demo\_savestate      | viewmodel-savedstate实践 fragment replace 状态恢复测试 |
@@ -30,8 +31,9 @@
 
 - [【背上Jetpack之Lifecycle】万物基于Lifecycle](https://juejin.im/post/5e8348bef265da47e02a6ce2)
 
-
 - [【背上Jetpack之LiveData】ViewModel 的左膀右臂 数据驱动真的香](https://juejin.im/post/5e834bb5f265da480d61668d)
+
+- [【背上Jetpack之DataBinding】数据驱动魔法师 何时迎来翻身日？](https://juejin.im/post/5e8ef0bc518825736b749705)
 
 
 ## screenshot
