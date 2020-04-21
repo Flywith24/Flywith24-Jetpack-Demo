@@ -1,6 +1,7 @@
 package com.flywith24.demo_lifecycle
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -9,6 +10,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("yyz11", "onCreate: ")
         player = PlayManager(this, PlayStateListener())
     }
 
