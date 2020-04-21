@@ -21,7 +21,7 @@ object AndroidX {
     val fragment = Fragment
 
     object Fragment {
-        private const val fragment_version = "1.2.2"
+        private const val fragment_version = "1.3.0-alpha02"
         const val fragment = "androidx.fragment:fragment:$fragment_version"
         const val fragmentKtx = "androidx.fragment:fragment-ktx:$fragment_version"
         const val fragmentTesting = "androidx.fragment:fragment-testing:$fragment_version"
@@ -31,7 +31,6 @@ object AndroidX {
 
     object Lifecycle {
         private const val lifecycle_version = "2.2.0"
-        const val extensions = "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
         const val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
         const val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
         const val viewModelSavedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
