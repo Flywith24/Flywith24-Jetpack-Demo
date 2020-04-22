@@ -1,6 +1,7 @@
 package com.flywith24.demo_savestate
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
@@ -24,6 +25,21 @@ class HostFragment : BaseFragment<FragmentHostBinding>(R.layout.fragment_host) {
         binding.button1.setOnClickListener { jumpToFragment<ParentFragment>() }
         binding.button2.setOnClickListener { jumpToFragment<ViewModelWithSavedStateFragment>() }
         binding.button3.setOnClickListener { jumpToFragment<ViewModelWithoutSavedStateFragment>() }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.i("yyz11", "onCreate: $this")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("yyz11", "onDestroy: $this")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.i("yyz11", "onDestroyView: $this")
     }
 }
 
