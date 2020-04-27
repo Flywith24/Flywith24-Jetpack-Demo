@@ -21,8 +21,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         //打印activity 与 ViewModel 观察屏幕旋转时二者的值是否变化
         Log.i(TAG, "onCreate: $this $mViewModel")
-        supportFragmentManager.commitNow {
-            add<TestFragment>(R.id.container)
+        if (savedInstanceState != null) {
+            supportFragmentManager.commitNow {
+                add<TestFragment>(R.id.container)
+            }
         }
     }
 
