@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">demo_newapi</string>
+    <string name="send_data">发送数据</string>
 </resources>
