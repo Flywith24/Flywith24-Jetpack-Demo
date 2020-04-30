@@ -21,7 +21,7 @@ object AndroidX {
     val fragment = Fragment
 
     object Fragment {
-        private const val fragment_version = "1.3.0-alpha02"
+        private const val fragment_version = "1.3.0-alpha04"
         const val fragment = "androidx.fragment:fragment:$fragment_version"
         const val fragmentKtx = "androidx.fragment:fragment-ktx:$fragment_version"
         const val fragmentTesting = "androidx.fragment:fragment-testing:$fragment_version"
