@@ -1,13 +1,9 @@
 plugins {
     id("com.android.application")
     id("com.build.plugin")
-    id 'kotlin-android'
-    id 'kotlin-android-extensions'
 }
 android { defaultConfig { applicationId = "com.flywith24.demo_newapi" } }
 
 dependencies {
     implementation(project(":library_base"))
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }
