@@ -16,7 +16,7 @@ object AndroidX {
     const val cardview = "androidx.cardview:cardview:1.0.0"
     const val multidex = "androidx.multidex:multidex:2.0.0"
     const val legacy = "androidx.legacy:legacy-support-v4:1.0.0"
-    const val paging = "androidx.paging:paging-runtime-ktx:2.1.1"
+    const val paging = "androidx.paging:paging-runtime-ktx:2.1.2"
 
     val fragment = Fragment
 
