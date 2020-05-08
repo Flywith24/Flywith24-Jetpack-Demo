@@ -9,9 +9,9 @@ package com.flywith24.buildsrc.dependencies
 @Suppress("SpellCheckingInspection")
 object AndroidX {
     const val appcompat = "androidx.appcompat:appcompat:1.1.0"
-    const val recyclerView = "androidx.recyclerview:recyclerview:1.2.0-alpha02"
+    const val recyclerView = "androidx.recyclerview:recyclerview:1.2.0-alpha03"
     const val coreKtx = "androidx.core:core-ktx:1.2.0"
-    const val activityKtx = "androidx.activity:activity-ktx:1.2.0-alpha02"
+    const val activityKtx = "androidx.activity:activity-ktx:1.2.0-alpha04"
     const val constraintlayout = "androidx.constraintlayout:constraintlayout:1.1.3"
     const val cardview = "androidx.cardview:cardview:1.0.0"
     const val multidex = "androidx.multidex:multidex:2.0.0"
