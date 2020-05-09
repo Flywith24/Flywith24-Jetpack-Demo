@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">paging</string>
+    <string name="only_network">仅网络</string>
+    <string name="db_network">网络+数据库</string>
 </resources>

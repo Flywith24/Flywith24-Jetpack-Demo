@@ -1,7 +1,8 @@
-package com.flywith24.demo_paging
+package com.flywith24.demo_paging.network
 
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.paging.DataSource
+import com.flywith24.demo_paging.Api
 
 /**
  * @author yyz (杨云召)

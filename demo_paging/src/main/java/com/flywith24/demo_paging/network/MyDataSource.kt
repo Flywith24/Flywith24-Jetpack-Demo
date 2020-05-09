@@ -1,7 +1,8 @@
-package com.flywith24.demo_paging
+package com.flywith24.demo_paging.network
 
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.paging.PageKeyedDataSource
+import com.flywith24.demo_paging.Api
 import kotlinx.coroutines.launch
 
 /**
