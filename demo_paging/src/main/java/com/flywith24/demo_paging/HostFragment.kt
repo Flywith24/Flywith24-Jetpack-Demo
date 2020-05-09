@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import com.flywith24.demo_paging.db.DbFragment
 import com.flywith24.demo_paging.network.NetworkFragment
 import kotlinx.android.synthetic.main.fragment_host.*
 
@@ -26,7 +27,7 @@ class HostFragment : Fragment(R.layout.fragment_host) {
         network_db.setOnClickListener {
             parentFragmentManager.commit {
                 addToBackStack(null)
-                replace<NetworkFragment>(R.id.container)
+                replace<DbFragment>(R.id.container)
             }
         }
     }

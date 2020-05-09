@@ -1,5 +1,7 @@
 package com.flywith24.demo_paging
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
@@ -33,39 +35,15 @@ interface Api {
         val total: Int
     )
 
+    @Entity
     data class Data(
-        val apkLink: String,
-        val audit: Int,
-        val author: String,
-        val canEdit: Boolean,
-        val chapterId: Int,
-        val chapterName: String,
-        val collect: Boolean,
-        val courseId: Int,
         val desc: String,
-        val descMd: String,
-        val envelopePic: String,
-        val fresh: Boolean,
         val id: Int,
-        val link: String,
-        val niceDate: String,
-        val niceShareDate: String,
-        val origin: String,
-        val prefix: String,
-        val projectLink: String,
-        val publishTime: Long,
-        val selfVisible: Int,
-        val shareDate: Long,
-        val shareUser: String,
-        val superChapterId: Int,
-        val superChapterName: String,
-        val tags: List<Tag>,
-        val title: String,
-        val type: Int,
-        val userId: Int,
-        val visible: Int,
-        val zan: Int
-    )
+        val title: String
+    ) {
+        @PrimaryKey(autoGenerate = true)
+        var indexInResponse: Int = -1
+    }
 
     data class Tag(
         val name: String,
