@@ -22,6 +22,4 @@ interface DataDao {
     @Query("SELECT * FROM data ORDER BY indexInResponse ASC")
     fun getData(): DataSource.Factory<Int, Api.Data>
 
-    @Query("SELECT MAX(indexInResponse)+1 FROM data")
-    fun getNextIndexData(): Int
 }
