@@ -1,4 +1,4 @@
-package com.flywith24.demo_newapi
+package com.flywith24.demo_resultapi
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

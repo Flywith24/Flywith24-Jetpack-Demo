@@ -1,4 +1,4 @@
-package com.flywith24.demo_newapi
+package com.flywith24.demo_resultapi
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.flywith24.demo_newapi
+package com.flywith24.demo_resultapi
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -20,7 +20,12 @@ class FragmentB : Fragment(R.layout.fragment_common) {
 
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        root.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.colorYellow))
+        root.setBackgroundColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.colorYellow
+            )
+        )
         text.text = FragmentB::class.simpleName
         button.setOnClickListener {
 
@@ -33,7 +38,9 @@ class FragmentB : Fragment(R.layout.fragment_common) {
 
         }
         setFragmentResultListener(REQUEST_KEY1) { key, bundle ->
-            text.text = "${bundle.getString(BUNDLE_KEY1)}，${bundle.getString(BUNDLE_KEY2)}"
+            text.text = "${bundle.getString(BUNDLE_KEY1)}，${bundle.getString(
+                BUNDLE_KEY2
+            )}"
         }
     }
 
