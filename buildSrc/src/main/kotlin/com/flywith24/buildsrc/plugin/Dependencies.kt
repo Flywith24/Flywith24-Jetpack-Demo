@@ -40,6 +40,7 @@ internal fun Project.configureDependencies() = dependencies.apply {
     add(debugImplementation, AndroidX.Fragment.fragmentTesting)
     add(implementation, AndroidX.constraintlayout)
     add(implementation, AndroidX.cardview)
+    add(implementation, AndroidX.recyclerView)
     add(implementation, Kotlin.stdlibJdk7)
     add(implementation, Google.material)
     add(implementation, AndroidX.Lifecycle.commonJava8)
