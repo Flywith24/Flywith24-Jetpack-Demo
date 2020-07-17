@@ -46,6 +46,7 @@ internal fun Project.configureDependencies() = dependencies.apply {
     add(implementation, AndroidX.Lifecycle.commonJava8)
     add(implementation, AndroidX.Lifecycle.liveDataKtx)
     add(implementation, AndroidX.Lifecycle.viewModelKtx)
+    add(implementation, AndroidX.viewpager)
 
 }
 
