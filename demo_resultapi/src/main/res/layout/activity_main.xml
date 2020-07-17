@@ -8,7 +8,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container1"
-        android:name="com.flywith24.demo_newapi.FragmentA"
+        android:name="com.flywith24.demo_resultapi.FragmentA"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/container2"
@@ -18,7 +18,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/container2"
-        android:name="com.flywith24.demo_newapi.FragmentB"
+        android:name="com.flywith24.demo_resultapi.FragmentB"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
