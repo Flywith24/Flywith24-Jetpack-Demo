@@ -1,7 +1,6 @@
-rootProject.name='Flywith24-Fragment-Demo'
+rootProject.name='Flywith24-Jetpack-Demo'
 include ':demo_backstack'
 include ':demo_singlefragment'
-include ':buildSrc'
 include ':library_base'
 include ':demo_viewpager2'
 include ':demo_savestate'
