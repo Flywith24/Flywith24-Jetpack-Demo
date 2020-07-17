@@ -8,7 +8,7 @@ package com.flywith24.buildsrc.dependencies
  */
 @Suppress("SpellCheckingInspection")
 object AndroidX {
-    const val appcompat = "androidx.appcompat:appcompat:1.1.0"
+    const val appcompat = "androidx.appcompat:appcompat:1.3.0-alpha01"
     const val recyclerView = "androidx.recyclerview:recyclerview:1.2.0-alpha03"
     const val coreKtx = "androidx.core:core-ktx:1.2.0"
     const val activityKtx = "androidx.activity:activity-ktx:1.2.0-alpha04"
@@ -17,6 +17,7 @@ object AndroidX {
     const val multidex = "androidx.multidex:multidex:2.0.0"
     const val legacy = "androidx.legacy:legacy-support-v4:1.0.0"
     const val paging = "androidx.paging:paging-runtime-ktx:2.1.2"
+    const val viewpager = "androidx.viewpager:viewpager:1.0.0"
 
     val fragment = Fragment
 
