@@ -1,3 +1,4 @@
+include ':demo_hilt'
 rootProject.name = 'Flywith24-Jetpack-Demo'
 include ':demo_backstack'
 include ':demo_singlefragment'
