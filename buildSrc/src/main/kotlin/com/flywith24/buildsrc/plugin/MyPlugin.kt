@@ -1,6 +1,6 @@
 package com.flywith24.buildsrc.plugin
 
-import com.flywith24.buildsrc.dependencies.Version
+import Version
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 

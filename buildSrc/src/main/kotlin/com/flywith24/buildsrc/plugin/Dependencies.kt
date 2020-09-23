@@ -1,13 +1,13 @@
 package com.flywith24.buildsrc.plugin
 
+import AndroidX
+import Google
+import Kotlin
+import Testing.androidTestRules
+import Testing.androidTestRunner
+import Testing.espressoCore
+import Testing.jUnit
 import com.android.build.gradle.api.AndroidBasePlugin
-import com.flywith24.buildsrc.dependencies.AndroidX
-import com.flywith24.buildsrc.dependencies.Google
-import com.flywith24.buildsrc.dependencies.Kotlin
-import com.flywith24.buildsrc.dependencies.Testing.androidTestRules
-import com.flywith24.buildsrc.dependencies.Testing.androidTestRunner
-import com.flywith24.buildsrc.dependencies.Testing.espressoCore
-import com.flywith24.buildsrc.dependencies.Testing.jUnit
 import org.gradle.api.Project
 
 /**

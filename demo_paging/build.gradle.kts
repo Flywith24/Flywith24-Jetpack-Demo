@@ -1,6 +1,3 @@
-import com.flywith24.buildsrc.dependencies.AndroidX
-
-
 plugins {
     id("com.android.application")
     id("com.build.plugin")

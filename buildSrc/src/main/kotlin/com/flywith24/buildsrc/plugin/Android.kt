@@ -2,8 +2,8 @@
 
 package com.flywith24.buildsrc.plugin
 
+import Version
 import com.android.build.gradle.BaseExtension
-import com.flywith24.buildsrc.dependencies.Version
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.findByType

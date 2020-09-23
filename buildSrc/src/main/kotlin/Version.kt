@@ -1,5 +1,3 @@
-package com.flywith24.buildsrc.dependencies
-
 /**
  * @author yyz (杨云召)
  * @date   2020/1/13
