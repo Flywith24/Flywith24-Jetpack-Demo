@@ -5,7 +5,7 @@
  * description
  */
 object Google {
-    private const val hiltVersion = "2.28-alpha"
+    private const val hiltVersion = "2.29.1-alpha"
     const val material = "com.google.android.material:material:1.2.0-alpha05"
 
     const val hiltPlugin = "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
