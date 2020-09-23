@@ -9,8 +9,8 @@ dependencies {
     implementation(AndroidX.paging)
     implementation(AndroidX.Room.roomRuntime)
     implementation(AndroidX.Room.roomKtx)
-    add("kapt", AndroidX.Room.roomCompiler)
+    kapt(AndroidX.Room.roomCompiler)
 
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation(ThirdParty.retrofit)
+    implementation(ThirdParty.converterGson)
 }
