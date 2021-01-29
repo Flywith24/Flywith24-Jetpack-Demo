@@ -29,9 +29,20 @@ class MultipleStackChildFragment :
     var depth: Int by args()
 
     override fun init(savedInstanceState: Bundle?) {
+        javaClass
         with(binding.text) {
             text = getString(R.string.fragmentHint).formatSpanned(
                 name,
+                "${parentFragment?.javaClass?.simpleName}{${
+                    Integer.toHexString(
+                        System.identityHashCode(
+                            parentFragment
+                        )
+                    )
+                }}"
+                    .scale(0.4F)
+                    .color(requireContext().getColor(R.color.colorRed))
+                    .bold(),
                 getCount(depth),
                 getString(R.string.clear)
                     .scale(0.4F)
