@@ -10,7 +10,7 @@
 | demo\_databinding      | databinding demo      |
 | demo\_lifecycle      | lifecycle demo      |
 | demo\_livedata       | livedata demo      |
-| demo\_mergeadapter   | 更优雅地为 RecyclerView 添加 Header Footer     |
+| demo\_concatadapter   | 更优雅地为 RecyclerView 添加 Header Footer     |
 | demo\_paging         | paging demo,仅网络和网络+数据库 两种方式     |
 | demo\_recyclerview_scroll         | 恢复 RecyclerView 滚动状态    |
 | demo\_resultapi      | Fragment result API，Fragment 间通信新方式 |
