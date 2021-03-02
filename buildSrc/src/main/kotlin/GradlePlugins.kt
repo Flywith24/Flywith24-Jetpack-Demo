@@ -1,5 +1,5 @@
 object GradlePlugins {
-    const val ANDROID = "com.android.tools.build:gradle:4.0.1"
+    const val ANDROID = "com.android.tools.build:gradle:4.1.2"
 
     interface GradlePlugin {
         val ID: String
@@ -10,6 +10,6 @@ object GradlePlugins {
 
     object Kotlin : GradlePlugin {
         override val ID = "gradle-plugin"
-        override val VERSION = "1.4.10"
+        override val VERSION = "1.4.31"
     }
 }
