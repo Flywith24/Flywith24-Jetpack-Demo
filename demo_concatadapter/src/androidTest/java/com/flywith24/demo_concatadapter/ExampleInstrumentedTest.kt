@@ -1,4 +1,4 @@
-package com.flywith24.demo_mergeadapter
+package com.flywith24.demo_concatadapter
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

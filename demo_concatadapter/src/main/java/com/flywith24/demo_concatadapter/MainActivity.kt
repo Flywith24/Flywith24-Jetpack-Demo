@@ -1,8 +1,8 @@
-package com.flywith24.demo_mergeadapter
+package com.flywith24.demo_concatadapter
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.MergeAdapter
+import androidx.recyclerview.widget.ConcatAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         )
         val header = HeaderAdapter()
         recyclerView.apply {
-            adapter = MergeAdapter(header, mAdapter)
+            adapter = ConcatAdapter(header, mAdapter)
         }
         mAdapter.submitList(list)
     }

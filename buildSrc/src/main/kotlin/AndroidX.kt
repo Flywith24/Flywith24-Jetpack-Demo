@@ -6,8 +6,8 @@
  */
 @Suppress("SpellCheckingInspection")
 object AndroidX {
-    const val appcompat = "androidx.appcompat:appcompat:1.3.0-alpha01"
-    const val recyclerView = "androidx.recyclerview:recyclerview:1.2.0-alpha03"
+    const val appcompat = "androidx.appcompat:appcompat:1.3.0-beta01"
+    const val recyclerView = "androidx.recyclerview:recyclerview:1.2.0-beta02"
     const val coreKtx = "androidx.core:core-ktx:1.2.0"
     const val activityKtx = "androidx.activity:activity-ktx:1.2.0-alpha04"
     const val constraintlayout = "androidx.constraintlayout:constraintlayout:1.1.3"
@@ -20,7 +20,7 @@ object AndroidX {
     val fragment = Fragment
 
     object Fragment {
-        private const val fragment_version = "1.3.0-alpha05"
+        private const val fragment_version = "1.3.0"
         const val fragment = "androidx.fragment:fragment:$fragment_version"
         const val fragmentKtx = "androidx.fragment:fragment-ktx:$fragment_version"
         const val fragmentTesting = "androidx.fragment:fragment-testing:$fragment_version"

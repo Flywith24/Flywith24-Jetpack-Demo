@@ -1,4 +1,4 @@
-package com.flywith24.demo_mergeadapter
+package com.flywith24.demo_concatadapter
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
