@@ -6,7 +6,7 @@ android { defaultConfig { applicationId = "com.flywith24.demo_paging" } }
 
 dependencies {
     implementation(project(":library_base"))
-    implementation(AndroidX.paging)
+    implementation(AndroidX.Paging.pagingRuntimeKtx)
     implementation(AndroidX.Room.roomRuntime)
     implementation(AndroidX.Room.roomKtx)
     kapt(AndroidX.Room.roomCompiler)
