@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <com.google.android.material.appbar.MaterialToolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:background="?colorPrimary"
+    app:title="首页"
+    app:titleCentered="true"
+    app:titleTextColor="?colorOnPrimarySurface" />
+
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/liveDataClick"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:text="LiveData"
+    android:textAllCaps="false" />
+
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/stateFlowClick"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:text="StateFlow"
+    android:textAllCaps="false" />
+
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/sharedFlowClick"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:text="SharedFlow"
+    android:textAllCaps="false" />
+</androidx.appcompat.widget.LinearLayoutCompat>

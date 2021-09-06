@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <com.google.android.material.appbar.MaterialToolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:background="?colorPrimary"
+    app:titleCentered="true"
+    app:titleTextColor="?colorOnPrimarySurface" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="10dp"
+    android:text="header"
+    android:textSize="@dimen/sp_20" />
+
+  <com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/edit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:hint="input header"
+    android:minWidth="100dp" />
+
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/update"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:text="update header"
+    android:textAllCaps="false" />
+
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/showSnackbar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:text="show Snackbar"
+    android:textAllCaps="false" />
+</androidx.appcompat.widget.LinearLayoutCompat>
