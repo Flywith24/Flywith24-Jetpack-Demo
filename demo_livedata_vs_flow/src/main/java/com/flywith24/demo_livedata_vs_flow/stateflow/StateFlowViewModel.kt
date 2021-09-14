@@ -3,12 +3,13 @@ package com.flywith24.demo_livedata_vs_flow.stateflow
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 
 class StateFlowViewModel : ViewModel() {
   val username = MutableStateFlow("")
 
   private val _headerText = MutableStateFlow("Header")
-  val headerText: StateFlow<String> = _headerText
+  val headerText = _headerText.asStateFlow()
 
   private val _showSnackbar = MutableStateFlow<String>("default")
   val showSnackbar: StateFlow<String> = _showSnackbar

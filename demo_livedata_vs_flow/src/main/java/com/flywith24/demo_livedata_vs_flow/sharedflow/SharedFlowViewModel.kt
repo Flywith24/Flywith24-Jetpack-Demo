@@ -14,12 +14,11 @@ class SharedFlowViewModel : ViewModel() {
   private val _showSnackbar = MutableSharedFlow<String>()
   val showSnackbar: SharedFlow<String> = _showSnackbar
 
-
-  suspend fun updateHeaderClick() {
-    _headerText.emit(username.value)
+  fun updateHeaderClick() {
+    _headerText.tryEmit(username.value)
   }
 
-  suspend fun showSnackbarClick() {
-    _showSnackbar.emit(username.value)
+  fun showSnackbarClick() {
+    _showSnackbar.tryEmit(username.value)
   }
 }

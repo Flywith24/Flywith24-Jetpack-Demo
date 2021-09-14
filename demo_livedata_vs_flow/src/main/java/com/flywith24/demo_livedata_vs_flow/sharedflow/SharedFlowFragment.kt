@@ -23,10 +23,10 @@ class SharedFlowFragment : CommonFragment("SharedFlow") {
 
     lifecycleScope.launch {
       viewModel.headerText
-          .flowWithLifecycle(lifecycle)
-          .collect {
-            header.text = it
-          }
+        .flowWithLifecycle(lifecycle)
+        .collect {
+          header.text = it
+        }
     }
 
     launchAndRepeatWithViewLifecycle {
@@ -35,14 +35,10 @@ class SharedFlowFragment : CommonFragment("SharedFlow") {
 
     update.setOnClickListener {
       closeKeyboard(edit)
-      lifecycleScope.launch {
-        viewModel.updateHeaderClick()
-      }
+      viewModel.updateHeaderClick()
     }
     showSnackbar.setOnClickListener {
-      lifecycleScope.launch {
-        viewModel.showSnackbarClick()
-      }
+      viewModel.showSnackbarClick()
     }
   }
 }
