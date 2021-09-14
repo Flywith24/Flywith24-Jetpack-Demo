@@ -10,6 +10,7 @@
 | demo\_databinding      | databinding demo      |
 | demo\_lifecycle      | lifecycle demo      |
 | demo\_livedata       | livedata demo      |
+| demo\_livedata\_vs\_flow     | livedata\_vs\_flow demo |
 | demo\_concatadapter   | 更优雅地为 RecyclerView 添加 Header Footer     |
 | demo\_paging         | paging demo,仅网络和网络+数据库 两种方式     |
 | demo\_recyclerview_scroll         | 恢复 RecyclerView 滚动状态    |
@@ -18,7 +19,6 @@
 | demo\_singlefragment | 最简单的场景生命周期分析                |
 | demo\_viewmodel      | viewmodel demo      |
 | demo\_viewpager2     | fragment \+ viewpager2 demo |
-
 
 
 ## blog
@@ -45,6 +45,7 @@
 
 - [【Jetpack更新之Fragment】1.3.0-alpha04 来袭，Fragment 间通信的新姿势](https://juejin.im/post/5eaa471bf265da7bad3536bd)
 
+- [不做跟风党，LiveData，StateFlow，SharedFlow 使用场景对比](https://juejin.cn/post/7007602776502960165)
 
 ## screenshot
 
